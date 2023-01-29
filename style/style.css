@@ -15,6 +15,9 @@
   background-color: #ff8500;
   border-radius: 10px;
 }
+.bars {
+  display: none;
+}
 header {
   display: flex;
   justify-content: space-between;
@@ -185,51 +188,39 @@ h3 {
   text-transform: capitalize;
   margin-left: -20px;
 }
-.office .first {
-  position: absolute;
+.office {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-wrap: wrap;
 }
+.office div {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 h4 {
+  width: 90%;
   color: #ff8500;
-  letter-spacing: 3px;
-  margin: 40px 60px;
+  letter-spacing: 2px;
+  font-size: 20px;
+  margin: 50px auto;
 }
-.office .first p {
+.office p {
   font-size: 40px;
   font-weight: 500;
   letter-spacing: 3px;
   margin-left: 60px;
   margin-top: -20px;
 }
-.office .first span {
+.office p span {
   text-align: center;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: capitalize;
-  margin: 80px 180px;
+  letter-spacing: 1px;
 }
-.office .second {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-.office .second p {
-  font-size: 40px;
-  font-weight: 500;
-  letter-spacing: 3px;
-}
-.office .second span {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 700;
-  text-transform: capitalize;
-  padding: 100px;
-}
-
-.office button {
-  width: 150px;
+.pur {
+  margin: 50px auto;
   padding: 20px;
   border-style: none;
   border-radius: 15px;
@@ -237,7 +228,6 @@ h4 {
   background-color: #ff8500;
   font-size: 20px;
   text-transform: uppercase;
-  margin: 10px 500px;
   box-shadow: 0 0 10px rgba(51, 51, 51, 0.404);
 }
 .office button:hover {
@@ -251,22 +241,18 @@ h4 {
   align-items: center;
 }
 .circle button {
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
   color: white;
   border-style: none;
   border-radius: 50%;
   background-color: #0f2853;
   cursor: pointer;
   font-size: 25px;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: capitalize;
   box-shadow: 0 0 15px rgb(51, 51, 51);
-  animation-name: circle;
-  animation-duration: 1.2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-direction: alternate;
+  animation: circle 1.2s linear infinite alternate none;
 }
 @keyframes circle {
   100% {
@@ -405,46 +391,46 @@ hr {
   width: 10px;
   float: right;
 }
-.contact{
+.contact {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 70px 40px;
   line-height: 2;
 }
-.info span{
-font-size: 25px;
-color: #ff8500;
+.info span {
+  font-size: 25px;
+  color: #ff8500;
 }
-.info h6{
+.info h6 {
   font-size: 30px;
 }
-.info p{
+.info p {
   font-size: 20px;
   margin-bottom: 40px;
 }
-.send{
+.send {
   display: flex;
   flex-direction: column;
 }
-.send input{
+.send input {
   margin: 20px;
-width: 400px;
-height: 40px;
-outline: none;
-border-radius: 10px;
-border:solid 1px black;
+  width: 400px;
+  height: 40px;
+  outline: none;
+  border-radius: 10px;
+  border: solid 1px black;
 }
-.send input::placeholder{
+.send input::placeholder {
   text-align: center;
   font-size: 15px;
   text-transform: uppercase;
 }
-.send .message-eria{
+.send .message-eria {
   width: 400px;
   height: 200px;
 }
-.send button{
+.send button {
   align-self: center;
   width: 150px;
   padding: 20px;
@@ -455,4 +441,79 @@ border:solid 1px black;
   text-transform: capitalize;
   border-radius: 30px;
   box-shadow: 0 0 10px rgba(51, 51, 51, 0.44);
+}
+@media screen and (max-width: 550px) {
+  .bars {
+    display: block;
+    margin: 0 20px;
+    font-size: 25px;
+  }
+  .bars:hover ul {
+    display: block;
+  }
+  header ul {
+    display: none;
+  }
+  .pro p {
+    margin-left: 60px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  .modern {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .modern p {
+    display: none;
+  }
+  .modern ul li {
+    text-align:center;
+  }
+  .steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    font-size: 17px;
+  }
+  .office {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .office div span {
+    width: 50%;
+    font-size: 20px;
+  }
+  .circle{
+    width: 75%;
+    margin: 5px auto;
+  }
+  .style div{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+  }
+  .style div:hover p{
+    display: none;
+  }
+  .glopal .first{
+    display: none;
+  }
+  .glopal .second{
+    width: 100%;
+  }
+  .contact{
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    flex-wrap: wrap;
+  width: 100%;
+  }
+  .contact .send input{
+    margin:10px;
+    width: 350px;
+}
 }
